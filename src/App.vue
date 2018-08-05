@@ -160,9 +160,8 @@ export default {
     submit () {
         this.loading = true;
         // Add a new document with a generated id.
-        const collectionRef = Firebase
-            .firestore()
-            .collection('recipes');
+        console.log('oiawdioj')
+        const collectionRef = Firebase.firestore().collection("recipes");
         collectionRef
             .add({
                 description: this.description,
