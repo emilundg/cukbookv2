@@ -31,6 +31,7 @@
     "vue": "2.5.16",
     "vue-firestore": "^0.2.9",
     "vue-loader": "^13.5.0",
+    "vue-router": "^3.0.1",
     "vue-spinner": "^1.0.3",
     "vue-template-compiler": "^2.5.3",
     "vue2-touch-events": "^1.0.0",
