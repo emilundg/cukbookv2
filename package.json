@@ -6,7 +6,8 @@
   "scripts": {
     "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "start": "node server.js"
   },
   "dependencies": {
     "@material/textfield": "^0.37.1",
