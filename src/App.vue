@@ -50,7 +50,7 @@
   </div>
 
 <b-container class="container-fluid" v-if="tab === 2" style="width: 85vw;" fluid>
-              <form id="app" class="row" @submit="submit">
+              <b-form id="app" class="row" @submit="onSubmit">
               <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                   <div class="inputfield">
                     <label for="comment">Title:</label>
@@ -96,7 +96,7 @@
                 <button type="submit" class="submit">
                   Submit
                 </button>
-            </form>
+            </b-form>
             <dot-loader :loading="loading" :color="color"></dot-loader>
         </b-container>
 </div>
@@ -157,10 +157,10 @@ export default {
     onSlideEnd (slide) {
       this.sliding = false
     },
-    submit () {
+    onSubmit (e) {
         this.loading = true;
         // Add a new document with a generated id.
-        console.log('oiawdioj')
+      e.preventDefault();
         const collectionRef = Firebase.firestore().collection("recipes");
         collectionRef
             .add({
