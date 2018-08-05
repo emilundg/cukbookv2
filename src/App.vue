@@ -233,7 +233,7 @@ export default {
 }
 
 .carousel-inner {
-  width: 96%;
+  width: 100%;
   display: block;
   margin: 0 auto;
 
