@@ -153,10 +153,10 @@ export default {
   },
   methods: {
     swipeHandlerLeft () {
-      document.getElementsByClassName('carousel-control-prev')[0].click();
+      document.getElementsByClassName('carousel-control-next')[0].click();
     },
     swipeHandlerRight () {
-      document.getElementsByClassName('carousel-control-next')[0].click();
+      document.getElementsByClassName('carousel-control-prev')[0].click();
     },
     onSlideStart (slide) {
       this.sliding = true
