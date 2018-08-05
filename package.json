@@ -3,9 +3,8 @@
   "description": "A Vue.js project",
   "version": "1.0.0",
   "author": "emilundg <lundgrenemil@hotmail.com>",
-  "private": true,
   "scripts": {
-    "start": "node main.js",
+    "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
@@ -13,14 +12,13 @@
     "@material/textfield": "^0.37.1",
     "bootstrap": "^4.0.0-beta.2",
     "bootstrap-vue": "^1.2.0",
+    "express": "^4.16.3",
     "firebase": "^5.3.0",
     "popper.js": "^1.12.9",
     "vue": "^2.5.3",
     "vue-firestore": "^0.2.9",
     "vue-material-input": "^1.2.0",
-    "vue-spinner": "^1.0.3"
-  },
-  "devDependencies": {
+    "vue-spinner": "^1.0.3",
     "babel-core": "^6.26.0",
     "babel-loader": "^6.0.0",
     "babel-preset-env": "^1.6.1",
