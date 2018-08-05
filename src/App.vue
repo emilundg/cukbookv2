@@ -18,13 +18,14 @@
     <b-carousel id="carousel1"
                 controls
                 indicators
+                :interval="0"
                 v-model="slide"
                 @sliding-start="onSlideStart"
                 @sliding-end="onSlideEnd"
     >
       <!-- Slides with img slot -->
       <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
-      <b-carousel-slide class="carousel-slide" :interval="0" v-for="recipe in recipes" :key="recipe.id" v-touch:swipe.left="swipeHandlerLeft" v-touch:swipe.right="swipeHandlerRight">
+      <b-carousel-slide class="carousel-slide" v-for="recipe in recipes" :key="recipe.id" v-touch:swipe.left="swipeHandlerLeft" v-touch:swipe.right="swipeHandlerRight">
         <div class="row">
           <div class="col-sm">
                 <h2>{{recipe.title}}</h2>
