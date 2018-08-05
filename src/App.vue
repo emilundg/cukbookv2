@@ -24,7 +24,7 @@
     >
       <!-- Slides with img slot -->
       <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
-      <b-carousel-slide class="carousel-slide" v-for="recipe in recipes" :key="recipe.id">
+      <b-carousel-slide class="carousel-slide" :interval="0" v-for="recipe in recipes" :key="recipe.id" v-touch:swipe.left="swipeHandlerLeft" v-touch:swipe.right="swipeHandlerRight">
         <div class="row">
           <div class="col-sm">
                 <h2>{{recipe.title}}</h2>
@@ -151,6 +151,12 @@ export default {
    })
   },
   methods: {
+    swipeHandlerLeft () {
+      document.getElementsByClassName('carousel-control-prev')[0].click();
+    },
+    swipeHandlerRight () {
+      document.getElementsByClassName('carousel-control-next')[0].click();
+    },
     onSlideStart (slide) {
       this.sliding = true
     },
@@ -226,7 +232,7 @@ export default {
 }
 
 .carousel-inner {
-  width: 94%;
+  width: 96%;
   display: block;
   margin: 0 auto;
 
