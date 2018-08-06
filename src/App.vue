@@ -86,12 +86,12 @@
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group">
                     <label for="comment">Ingredients:</label>
-                    <textarea class="form-control" rows="5" id="comment" v-model="ingredients" required></textarea>
+                    <textarea class="form-control" rows="5" id="comment" v-model="ingredients" required placeholder="Lök, Ostron, Oumph.."></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="comment">Instructions:</label>
-                    <textarea class="form-control" rows="5" id="comment" v-model="instructions" required></textarea>
+                    <textarea class="form-control" rows="5" id="comment" v-model="instructions" required placeholder="Först hackar man löken sen.."></textarea>
                 </div>
                 </div>
                 <button type="submit" class="submit">
@@ -301,7 +301,7 @@ export default {
 }
 
 .carousel-control-next, .carousel-control-prev {
-  width: 4%;
+  width: 7%;
 }
 
 .carousel-control-next-icon {
