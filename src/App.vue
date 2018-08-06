@@ -269,7 +269,7 @@ export default {
 
   img {
     width: 30vw;
-    min-width: 280px;
+    min-width: 260px;
     padding: 10px;
     border: 1px solid #d9d9d9;
   }
