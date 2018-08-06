@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 <div>
-  <div class="App-logo"><div class="App-title"><h2>Le Cukbook</h2><p>A simple collection of recipes</p></div></div>
+  <div class="App-logo" style="padding: 10px;"><div class="App-title"><h2>Le Cukbook</h2><p>A simple collection of recipes</p></div></div>
  <b-navbar class="b-navbar" toggleable="md" type="light" variant="light" style="padding: 0px;">
 
   <b-navbar-toggle style="background: white; border-radius: 0px; border-top: 0px; border-bottom: 0px;" target="nav_collapse"></b-navbar-toggle>
@@ -35,7 +35,7 @@
           </div>
           <div class="col-sm">
                 <h3>Ingredients</h3>
-                <ul style="columns: 2">
+                <ul style="columns: 2; padding: 0px;">
                    <li style="list-style: none;" v-for="ingredient in recipe.ingredients.split(',')" :key="ingredient.id">
                      {{ingredient}}
                    </li>
