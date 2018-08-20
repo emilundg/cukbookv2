@@ -248,7 +248,7 @@ export default {
 }
 
 .App-logo {
-    background-image: url(https://media.istockphoto.com/photos/border-of-fresh-vegetables-on-wooden-background-with-copy-space-picture-id598245958?k=6&m=598245958&s=612x612&w=0&h=Phs8tuN7iHL8Q2yNzr1bsFliKnEwhSEMM3NJOLBxWQU=);
+    background-image: url(https://github.com/emilundg/cukbookv2/blob/master/header-inTheKitchen1.jpg?raw=true);
     height: 100px;
     box-shadow: inset 0 -10px 40px rgba(0,0,0,0.5);
     > .App-title {
