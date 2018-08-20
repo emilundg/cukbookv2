@@ -248,7 +248,7 @@ export default {
 }
 
 .App-logo {
-    background-image: url(https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/1012305/1360/906/m1/fpnw/wm1/tyhlpnowodzm2wpsksuz240scqzybbtjxpulre9zs8qugxsic4zdhwfixlgupu5u-.jpg?1456015760&s=49be34ec1d74f1bd0afe052d2ec124f3);
+    background-image: url(https://media.istockphoto.com/photos/border-of-fresh-vegetables-on-wooden-background-with-copy-space-picture-id598245958?k=6&m=598245958&s=612x612&w=0&h=Phs8tuN7iHL8Q2yNzr1bsFliKnEwhSEMM3NJOLBxWQU=);
     height: 100px;
     box-shadow: inset 0 -10px 40px rgba(0,0,0,0.5);
     > .App-title {
