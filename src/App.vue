@@ -274,25 +274,27 @@
     >.App-title {
       color: rgba(255, 255, 255, 0.87);
     }
-  }
+}
 
-  .carousel-caption {
-    color: #2c3e50 !important;
-    position: static;
-    outline: none;
-  }
+.carousel-caption {
+  color:#2c3e50 !important;
+  position: static;
+  outline: none;
+}
 
-  .carousel-slide {
-    outline: none;
-    background: white;
-    margin-bottom: 20px;
-    img {
-      max-height: 240px;
-      width: 30vw;
-      min-width: 260px;
-      padding: 10px;
-      border: 1px solid #d9d9d9;
+.carousel-slide {
+  outline: none;
+  background: white;
+  margin-bottom: 20px;
+
+  img {
+    max-height: auto;
+    width: 30vw;
+    min-width: 260px;
+    padding: 10px;
+    border: 1px solid #d9d9d9;
     }
+    
     img,
     h3 {
       margin-bottom: 2vh;
