@@ -286,7 +286,7 @@ export default {
   margin-bottom: 20px;
 
   img {
-    max-height: 240px;
+    max-height: auto;
     width: 30vw;
     min-width: 260px;
     padding: 10px;
