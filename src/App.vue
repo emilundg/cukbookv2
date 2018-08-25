@@ -61,10 +61,15 @@
                   </div>
 
                   <div class="inputfield">
-                    <label for="comment">Image URL:</label>
-                    <b-form-input v-model="imgUrl"
-                    type="text"
-                    placeholder="Enter image URL" required></b-form-input>
+                    <label for="comment">Image:</label>
+                    <b-form-file
+                    :state="Boolean(file)"
+                    type="file" @change="manageUpload"
+                    v-model="imgUrl"
+                    accept="image/jpeg, image/png"
+                    plain
+                    required>
+                    </b-form-file>
                   </div>
 
                   <div class="inputfield">
@@ -106,6 +111,7 @@
 <script>
 import Firebase from 'firebase/app'
 import 'firebase/firestore'
+import 'firebase/storage'
 import DotLoader from 'vue-spinner/src/DotLoader.vue'
 
 var config = {
@@ -124,6 +130,7 @@ export default {
   },
   data () {
     return {
+      file: null,
       color: "rgba(33, 147, 245, 0.5)",
       errors: [],
       slide: 0,
@@ -152,6 +159,9 @@ export default {
    })
   },
   methods: {
+    manageUpload(event) {
+      this.imgUrl = event.target.files[0];
+    },
     swipeHandlerLeft () {
       document.getElementsByClassName('carousel-control-next')[0].click();
     },
@@ -169,14 +179,19 @@ export default {
         // Add a new document with a generated id.
       e.preventDefault();
         const collectionRef = Firebase.firestore().collection("recipes");
-        collectionRef
+        var storageRef = Firebase.storage().ref();
+        var ref = storageRef.child(this.imgUrl.name);
+        var self = this;
+        ref.put(this.imgUrl).then(function(snapshot) {
+           ref.getDownloadURL().then(function(url) {
+             collectionRef
             .add({
-                description: this.description,
-                imgSrc: this.imgUrl,
-                ingredients: this.ingredients,
-                instructions: this.instructions,
-                title: this.title,
-                author: this.author
+                description: self.description,
+                imgSrc: url,
+                ingredients: self.ingredients,
+                instructions: self.instructions,
+                title: self.title,
+                author: self.author
             })
             .then(function () {
                 window
@@ -186,7 +201,10 @@ export default {
             .catch(function (error) {
                 console.error("Error adding document: ", error);
             });
-    }
+
+          })
+        });
+       }
   }
 }
 </script>
@@ -268,6 +286,7 @@ export default {
   margin-bottom: 20px;
 
   img {
+    max-height: 240px;
     width: 30vw;
     min-width: 260px;
     padding: 10px;
@@ -341,6 +360,10 @@ export default {
 
 h1, h2 {
   font-weight: normal;
+}
+
+
+.custom-file-input{
 }
 
 .inputfield, .form-group {
